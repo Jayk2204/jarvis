@@ -4,6 +4,8 @@ import struct
 import subprocess
 import time
 import webbrowser
+from hugchat import hugchat
+
 from playsound import playsound
 import eel
 import pvporcupine
@@ -166,3 +168,15 @@ def whatsApp(mobile_no, message, flag, name):
 
     pyautogui.hotkey('enter')
     speak(jarvis_message)
+
+
+# chat bot 
+def chatBot(query):
+    user_input = query.lower()
+    chatbot = hugchat.ChatBot(cookie_path="engine\\cookies.json")
+    id = chatbot.new_conversation()
+    chatbot.change_conversation(id)
+    response =  chatbot.chat(user_input)
+    print(response)
+    speak(response)
+    return response

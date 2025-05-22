@@ -5,6 +5,7 @@ import time
 
 @eel.expose
 def speak(text):
+    text=str(text)
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
     engine.setProperty('voice', voices[0].id)
@@ -83,7 +84,8 @@ def allCommands(message=1):
                 whatsApp(contact_no,query,message,name)
                        
         else:
-            print("not run")
+             from engine.features import chatBot
+             chatBot(query)
     except Exception as e:
         print(f"Error in allCommands: {e}")
     
