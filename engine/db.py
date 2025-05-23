@@ -35,6 +35,6 @@ desired_columns_indices = [0, 18]
 # # Commit changes and close connection
 # con.commit()
 # con.close()
-query = "INSERT INTO contacts VALUES (null,'bholu', '9974430656', 'null')"
+query = "INSERT INTO contacts VALUES (null,'purnima mam', '9725155069', 'null')"
 cursor.execute(query)
 con.commit()
